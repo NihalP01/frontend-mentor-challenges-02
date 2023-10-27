@@ -1,167 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-  <title>Frontend Mentor | Results summary component</title>
+    <title>Frontend Mentor | Results summary component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    :root {
-      --default-margin: 1rem;
-    }
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      :root {
+        --default-margin: 1rem;
+      }
 
-    p {
-      margin: 0;
-      padding: 0;
-    }
+      p {
+        margin: 0;
+        padding: 0;
+        font-family: 'Hanken Grotesk', sans-serif;
+      }
 
-    body {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
 
-    .main-section {
-      display: grid;
-      grid-template-columns: 50% 50%;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 1.5rem;
-      width: 100%;
-      max-width: 600px;
-      background-color: white;
-      padding: 0;
-      box-shadow: 10px 10px 15px -3px rgba(0, 0, 0, 0.1);
-    }
+      .main-section {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 1.5rem;
+        width: 100%;
+        max-width: 600px;
 
-    .first-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 1.5rem;
-      background-color: cornflowerblue;
-      border-radius: 1.5rem;
-    }
+        padding: 0;
+        box-shadow: 10px 10px 15px -3px rgba(0, 0, 0, 0.1);
+      }
 
-    .second-section {
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+      .first-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1.5rem;
+        background: linear-gradient(
+          12deg,
+          hsl(241, 81%, 54%),
+          hsl(252, 100%, 67%)
+        );
+        border-radius: 1.5rem;
+      }
 
-    .score-circle {
-      margin-top: var(--default-margin);
-      padding: 1rem;
-      background-color: aqua;
-      border-radius: 100%;
-      text-align: center;
-    }
+      .second-section {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
 
-    .descbox {
-      text-align: center;
-      margin-top: calc(1.5 * (var(--default-margin)));
-    }
+      .result-title {
+        color: hsl(241, 100%, 89%);
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
 
-    .individual-score-box {
-      margin-top: 1rem;
-      display: flex;
-      justify-content: space-between;
-    }
+      .score-circle {
+        width: 192px;
+        height: 192px;
+        margin-top: 1.3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(
+          180deg,
+          hsla(256, 72%, 46%, 1),
+          hsla(241, 72%, 46%, 0)
+        );
+        border-radius: 100%;
+        text-align: center;
+      }
 
-    .btn-continue {
-      margin-top: calc(2* (var(--default-margin)));
-    }
+      .score-value {
+        color: white;
+        font-size: 3.5rem;
+        font-weight: 800;
+      }
 
-    .attribution {
-      position: absolute;
-      bottom: 2%;
-      font-size: 11px;
-      text-align: center;
-    }
+      .total-score {
+        color: hsl(241, 100%, 89%);
+        margin-top: -5px;
+        font-weight: 500;
+      }
 
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
-  </style>
-</head>
+      .score-desc {
+        padding: 0px 1.5rem 0 1.5rem;
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+        color: hsl(241, 100%, 89%);
+        font-weight: 500;
+        font-size: 0.9rem;
+      }
 
-<body>
-  <main class="main-section" role="main">
-    <section class="first-section">
-      <p>Your result</p>
-      <div class="score-circle">
-        <p>76</p>
-        <p>of 100</p>
-      </div>
-      <div class="descbox">
-        <p>Great</p>
-        <p>Your score higher than 65% of the poeple who have taken these tests.</p>
-      </div>
-    </section>
-    <section class="second-section">
-      <p>Summary</p>
-      <!-- TODO: Repeat this div 4 times -->
-      <div class="individual-score-box" style="margin-top: 1rem;">
-        <div style="display: flex;">
-          <p>$</p>
-          <p>Reaction</p>
+      .descbox {
+        text-align: center;
+        margin-top: calc(1.5 * (var(--default-margin)));
+      }
+
+      .second-title {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: hsl(224, 30%, 27%);
+        margin-bottom: 0.8rem;
+      }
+
+      .individual-score-box {
+        display: flex;
+        justify-content: space-between;
+        border-radius: 0.5rem;
+        padding: 0.9rem;
+        margin-top: -1.5rem;
+      }
+
+      .btn-continue {
+        margin-top: calc(2 * (var(--default-margin)));
+      }
+
+      .attribution {
+        position: absolute;
+        bottom: 2%;
+        font-size: 11px;
+        text-align: center;
+      }
+
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="main-section" role="main">
+      <section class="first-section">
+        <p class="result-title">Your result</p>
+        <div class="score-circle">
+          <p class="score-value">76</p>
+          <p class="total-score">of 100</p>
         </div>
-        <div style="display: flex;">
-          <p>80</p>
-          <p>/</p>
-          <p>100</p>
+        <div class="descbox">
+          <p style="font-size: 1.35rem; font-weight: 500; color: white">
+            Great
+          </p>
+          <p class="score-desc">
+            You scored higher than 65% of the poeple who have taken these tests.
+          </p>
         </div>
-      </div>
-      <div class="individual-score-box">
-        <div style="display: flex;">
-          <p>$</p>
-          <p>Memory</p>
+      </section>
+      <section class="second-section">
+        <p class="second-title">Summary</p>
+        <!-- score-1 -->
+        <div
+          class="individual-score-box"
+          style="background-color: hsla(0, 100%, 67%, 7%)"
+        >
+          <div style="display: flex">
+            <p>$</p>
+            <p>Reaction</p>
+          </div>
+          <div style="display: flex">
+            <p>80</p>
+            <p>/</p>
+            <p>100</p>
+          </div>
         </div>
-        <div style="display: flex;">
-          <p>92</p>
-          <p>/</p>
-          <p>100</p>
+        <!-- socre-2 -->
+        <div
+          class="individual-score-box"
+          style="background-color: hsla(39, 100%, 56%, 7%)"
+        >
+          <div style="display: flex">
+            <p>$</p>
+            <p>Memory</p>
+          </div>
+          <div style="display: flex">
+            <p>92</p>
+            <p>/</p>
+            <p>100</p>
+          </div>
         </div>
-      </div>
-      <div class="individual-score-box">
-        <div style="display: flex;">
-          <p>$</p>
-          <p>Verbal</p>
+        <!-- score-2 -->
+        <div
+          class="individual-score-box"
+          style="background-color: hsla(166, 100%, 37%, 7%)"
+        >
+          <div style="display: flex">
+            <p>$</p>
+            <p>Verbal</p>
+          </div>
+          <div style="display: flex">
+            <p>61</p>
+            <p>/</p>
+            <p>100</p>
+          </div>
         </div>
-        <div style="display: flex;">
-          <p>61</p>
-          <p>/</p>
-          <p>100</p>
+        <!-- score-4 -->
+        <div
+          class="individual-score-box"
+          style="background-color: hsla(234, 85%, 45%, 7%)"
+        >
+          <div style="display: flex">
+            <p>$</p>
+            <p>Visual</p>
+          </div>
+          <div style="display: flex">
+            <p>72</p>
+            <p>/</p>
+            <p>100</p>
+          </div>
         </div>
-      </div>
-      <div class="individual-score-box">
-        <div style="display: flex;">
-          <p>$</p>
-          <p>Visual</p>
-        </div>
-        <div style="display: flex;">
-          <p>72</p>
-          <p>/</p>
-          <p>100</p>
-        </div>
-      </div>
 
-      <button class="btn-continue">Continue</button>
-    </section>
-  </main>
-  <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="https://github.com/Nihalp01">Nihal Buragohain</a>.
-  </footer>
-</body>
-
+        <button class="btn-continue">Continue</button>
+      </section>
+    </main>
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://github.com/Nihalp01">Nihal Buragohain</a>.
+    </footer>
+  </body>
 </html>
