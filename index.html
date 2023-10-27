@@ -57,6 +57,13 @@
         box-shadow: 10px 10px 15px -3px rgba(0, 0, 0, 0.1);
       }
 
+      @media screen and (max-width: 480px) {
+        .main-section {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
       .first-section {
         display: flex;
         flex-direction: column;
@@ -70,6 +77,12 @@
         border-radius: 1.5rem;
       }
 
+      @media screen and (max-width: 480px) {
+        .first-section {
+          margin-top: -7rem;
+        }
+      }
+
       .second-section {
         padding: 1.5rem;
         display: flex;
@@ -81,6 +94,12 @@
         color: hsl(241, 100%, 89%);
         font-size: 1.1rem;
         font-weight: 700;
+      }
+
+      @media screen and (max-width: 480px) {
+        .result-title {
+          margin-top: 2rem;
+        }
       }
 
       .score-circle {
