@@ -18,7 +18,10 @@
       href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap"
       rel="stylesheet"
     />
-
+    <script
+      src="https://kit.fontawesome.com/9ea5bec45c.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Frontend Mentor | Results summary component</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -81,8 +84,8 @@
       }
 
       .score-circle {
-        width: 192px;
-        height: 192px;
+        width: 160px;
+        height: 160px;
         margin-top: 1.3rem;
         display: flex;
         flex-direction: column;
@@ -135,11 +138,35 @@
         justify-content: space-between;
         border-radius: 0.5rem;
         padding: 0.9rem;
-        margin-top: -1.5rem;
+        margin-top: 0.5rem;
+      }
+
+      .title-icon-box {
+        display: flex;
+        align-items: center;
       }
 
       .btn-continue {
         margin-top: calc(2 * (var(--default-margin)));
+        margin-bottom: 0.8rem;
+        padding: 1rem;
+        font-size: 0.9rem;
+        font-weight: 700;
+        border-radius: 10rem;
+        color: white;
+        border: none;
+        background-color: hsl(224, 30%, 27%);
+        cursor: pointer;
+      }
+
+      .btn-continue:hover {
+        /* background-color: hsl(241, 81%, 54%);
+        hsl(252, 100%, 67%) */
+        background: linear-gradient(
+          0deg,
+          hsl(241, 81%, 54%),
+          hsl(252, 100%, 67%)
+        );
       }
 
       .attribution {
@@ -179,14 +206,16 @@
           class="individual-score-box"
           style="background-color: hsla(0, 100%, 67%, 7%)"
         >
-          <div style="display: flex">
-            <p>$</p>
-            <p>Reaction</p>
+          <div class="title-icon-box">
+            <i class="fa-solid fa-bolt" style="color: hsl(0, 100%, 67%)"></i>
+            <p style="color: hsl(0, 100%, 67%); margin-left: 0.5rem">
+              Reaction
+            </p>
           </div>
           <div style="display: flex">
-            <p>80</p>
-            <p>/</p>
-            <p>100</p>
+            <p style="font-weight: 700; color: hsl(224, 30%, 27%)">80</p>
+            <p style="margin: 0 0.3rem 0 0.3rem">/</p>
+            <p style="color: hsl(230, 10%, 63%)">100</p>
           </div>
         </div>
         <!-- socre-2 -->
@@ -194,14 +223,14 @@
           class="individual-score-box"
           style="background-color: hsla(39, 100%, 56%, 7%)"
         >
-          <div style="display: flex">
-            <p>$</p>
-            <p>Memory</p>
+          <div class="title-icon-box">
+            <i class="fa-solid fa-brain" style="color: hsl(39, 100%, 56%)"></i>
+            <p style="color: hsl(39, 100%, 56%); margin-left: 0.5rem">Memory</p>
           </div>
           <div style="display: flex">
-            <p>92</p>
-            <p>/</p>
-            <p>100</p>
+            <p style="font-weight: 700; color: hsl(224, 30%, 27%)">92</p>
+            <p style="margin: 0 0.3rem 0 0.3rem">/</p>
+            <p style="color: hsl(230, 10%, 63%)">100</p>
           </div>
         </div>
         <!-- score-2 -->
@@ -209,14 +238,19 @@
           class="individual-score-box"
           style="background-color: hsla(166, 100%, 37%, 7%)"
         >
-          <div style="display: flex">
-            <p>$</p>
-            <p>Verbal</p>
+          <div class="title-icon-box">
+            <i
+              class="fa-solid fa-comment-dots"
+              style="color: hsl(166, 100%, 37%)"
+            ></i>
+            <p style="color: hsl(166, 100%, 37%); margin-left: 0.5rem">
+              Verbal
+            </p>
           </div>
-          <div style="display: flex">
-            <p>61</p>
-            <p>/</p>
-            <p>100</p>
+          <div class="title-icon-box">
+            <p style="font-weight: 700; color: hsl(224, 30%, 27%)">61</p>
+            <p style="margin: 0 0.3rem 0 0.3rem">/</p>
+            <p style="color: hsl(230, 10%, 63%)">100</p>
           </div>
         </div>
         <!-- score-4 -->
@@ -224,14 +258,14 @@
           class="individual-score-box"
           style="background-color: hsla(234, 85%, 45%, 7%)"
         >
-          <div style="display: flex">
-            <p>$</p>
-            <p>Visual</p>
+          <div class="title-icon-box">
+            <i class="fa-solid fa-eye" style="color: hsl(234, 85%, 45%)"></i>
+            <p style="color: hsl(234, 85%, 45%); margin-left: 0.5rem">Visual</p>
           </div>
           <div style="display: flex">
-            <p>72</p>
-            <p>/</p>
-            <p>100</p>
+            <p style="font-weight: 700; color: hsl(224, 30%, 27%)">72</p>
+            <p style="margin: 0 0.3rem 0 0.3rem">/</p>
+            <p style="color: hsl(230, 10%, 63%)">100</p>
           </div>
         </div>
 
