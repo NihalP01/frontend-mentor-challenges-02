@@ -52,7 +52,6 @@
         border-radius: 1.5rem;
         width: 100%;
         max-width: 600px;
-
         padding: 0;
         box-shadow: 10px 10px 15px -3px rgba(0, 0, 0, 0.1);
       }
@@ -61,6 +60,8 @@
         .main-section {
           display: flex;
           flex-direction: column;
+          min-height: 100vh;
+          margin: 0;
         }
       }
 
@@ -79,7 +80,7 @@
 
       @media screen and (max-width: 480px) {
         .first-section {
-          margin-top: -7rem;
+          padding-top: 7rem;
         }
       }
 
@@ -179,8 +180,6 @@
       }
 
       .btn-continue:hover {
-        /* background-color: hsl(241, 81%, 54%);
-        hsl(252, 100%, 67%) */
         background: linear-gradient(
           0deg,
           hsl(241, 81%, 54%),
@@ -190,9 +189,16 @@
 
       .attribution {
         position: absolute;
-        bottom: 2%;
+        bottom: 1rem;
         font-size: 11px;
         text-align: center;
+      }
+
+      @media screen and (max-width: 480px) {
+        .attribution {
+          transform: translateY(1200%);
+          margin-bottom: 0.4rem;
+        }
       }
 
       .attribution a {
